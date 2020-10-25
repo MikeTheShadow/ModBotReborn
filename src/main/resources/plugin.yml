@@ -1,0 +1,9 @@
+name: ModBotReborn
+version: ${project.version}
+main: com.miketheshadow.modbotreborn.ModBotReborn
+api-version: 1.13
+prefix: MBR
+load: STARTUP
+authors: [ MikeTheShadow ]
+description: Run your mod bot off of a MC server
+website: miketheshadow.ca
