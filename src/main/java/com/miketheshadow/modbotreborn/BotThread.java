@@ -2,9 +2,11 @@ package com.miketheshadow.modbotreborn;
 
 import com.miketheshadow.modbotreborn.command.CommandRegistry;
 import com.miketheshadow.modbotreborn.listener.GuildMessageEvent;
+import com.miketheshadow.modbotreborn.listener.PlayerJoinEvent;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.bukkit.ChatColor;
 
 import java.util.Objects;
@@ -24,10 +26,12 @@ public class BotThread implements Runnable {
 
         // Disable parts of the cache
         builder.setBulkDeleteSplittingEnabled(false)
+                .enableIntents(GatewayIntent.GUILD_MEMBERS)
                 .setActivity(Activity.watching("The World Burn"))
                 .addEventListeners(
                         new CommandRegistry(),
-                        new GuildMessageEvent());
+                        new GuildMessageEvent(),
+                        new PlayerJoinEvent());
         try {
             JDA jda = builder.build().awaitReady();
             String modChannelID = ModBotReborn.configuration.getString("mod_log_channel_id");

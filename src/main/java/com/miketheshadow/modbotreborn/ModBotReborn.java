@@ -11,6 +11,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ public final class ModBotReborn extends JavaPlugin {
         if(!loadConfig()) {
             return;
         }
-
+        PopupMenu popupMenu = new PopupMenu();
+        popupMenu.getAccessibleContext().getAccessibleComponent().getBackground();
         CommandRegistry.registerCommand("clean",new CleanCommand());
         CommandRegistry.registerCommand("warn",new WarnCommand());
         CommandRegistry.registerCommand("pardon",new PardonCommand());
