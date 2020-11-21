@@ -9,7 +9,6 @@ import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.exceptions.ErrorHandler;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.ErrorResponse;
-import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
 
 public class PlayerJoinEvent extends ListenerAdapter {
